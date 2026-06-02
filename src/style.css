@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyber-bg: #0A0A0A;
+  --cyber-card: rgba(255, 255, 255, 0.05);
+  --cyber-primary: #00D4FF;
+  --cyber-secondary: #7C3AED;
+  --cyber-text: #FFFFFF;
+  --cyber-text-secondary: #A1A1AA;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.5);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global styles */
+* {
+  @apply antialiased;
+}
+
+body {
+  @apply bg-cyber-bg text-cyber-text;
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-cyber-card backdrop-blur-lg border border-white border-opacity-10;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-cyber-primary via-cyber-secondary to-cyber-primary bg-clip-text text-transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* Neon glow effect */
+.glow-effect {
+  @apply drop-shadow-[0_0_20px_rgba(0,212,255,0.5)];
+}
+
+.glow-effect:hover {
+  @apply drop-shadow-[0_0_40px_rgba(0,212,255,0.8)];
+}
+
+/* Cyber line */
+.cyber-line {
+  @apply relative;
+}
+
+.cyber-line::before {
+  @apply absolute bottom-0 left-0 h-[2px] w-0 bg-cyber-primary transition-all duration-300 group-hover:w-full;
+  content: '';
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Section container */
+.section-container {
+  @apply min-h-screen flex items-center justify-center relative overflow-hidden;
+}
+
+/* Animated background */
+@keyframes animatedGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 400% 400%;
+  animation: animatedGradient 15s ease infinite;
+}
+
+/* Loading pulse */
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: loadingPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
