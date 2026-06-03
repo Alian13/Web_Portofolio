@@ -66,27 +66,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Scroll Indicator -->
-      <button 
-        @click="scrollToNext"
-        @mouseenter="isScrollBtnHovered = true"
-        @mouseleave="isScrollBtnHovered = false"
-        class="scroll-btn absolute bottom-20 left-1/2 transform -translate-x-1/2 cursor-pointer transition-all duration-300 active:scale-90 p-3 sm:p-4 rounded-full hover:bg-cyber-primary/20 hover:backdrop-blur-sm hover:border hover:border-cyber-primary/40"
-        aria-label="Scroll to next section"
-      >
-        <svg 
-          :class="[
-            'scroll-icon transition-all duration-300',
-            isScrollBtnHovered ? 'w-8 h-8 text-cyber-secondary' : 'w-6 h-6 text-cyber-primary'
-          ]"
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </button>
     </div>
   </section>
 </template>
@@ -96,7 +75,6 @@ import { ref, onMounted } from 'vue';
 import Button from '@/components/common/Button.vue';
 
 const typewriterRef = ref(null);
-const isScrollBtnHovered = ref(false);
 const titles = [
   'Informatics Student',
   'Network Engineer Enthusiast',
@@ -150,26 +128,6 @@ const scrollTo = (id) => {
   }
 };
 
-const scrollToNext = () => {
-  const sectionOrder = ['about', 'certifications', 'experience', 'projects', 'skills', 'techstack', 'cyberlab', 'contact'];
-  
-  // Find next section to scroll to
-  for (const sectionId of sectionOrder) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      // Scroll to first section that's below current viewport
-      if (rect.top > window.innerHeight / 2) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
-    }
-  }
-  
-  // If no section found below, scroll to first section
-  scrollTo(sectionOrder[0]);
-};
-
 onMounted(() => {
   typeTitle();
 });
@@ -179,38 +137,5 @@ onMounted(() => {
 .glass {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-@keyframes bounce-smooth {
-  0%, 100% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(-10px);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-@keyframes float-down {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-}
-
-.scroll-btn {
-  animation: bounce-smooth 2s infinite;
-}
-
-.scroll-btn:hover {
-  animation: float-down 1.5s ease-in-out infinite;
-}
-
-.scroll-icon {
-  stroke-width: 2.5;
-  display: block;
 }
 </style>

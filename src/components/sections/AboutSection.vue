@@ -40,29 +40,37 @@
         <div class="grid grid-cols-2 gap-4">
           <GlassCard>
             <div class="text-center">
-              <div class="text-4xl font-bold gradient-text mb-2">5+</div>
+              <div class="text-4xl font-bold gradient-text mb-2">
+                <span ref="counter1">0</span><span>+</span>
+              </div>
               <p class="text-cyber-textSecondary text-sm">Projects Completed</p>
             </div>
           </GlassCard>
 
           <GlassCard>
             <div class="text-center">
-              <div class="text-4xl font-bold gradient-text mb-2">1</div>
-              <p class="text-cyber-textSecondary text-sm">Certifications</p>
+              <div class="text-4xl font-bold gradient-text mb-2">
+                <span ref="counter2">0</span><span>+</span>
+              </div>
+              <p class="text-cyber-textSecondary text-sm">Technical Roles</p>
             </div>
           </GlassCard>
 
           <GlassCard>
             <div class="text-center">
-              <div class="text-4xl font-bold gradient-text mb-2">2+</div>
-              <p class="text-cyber-textSecondary text-sm">Years Experience</p>
+              <div class="text-4xl font-bold gradient-text mb-2">
+                <span ref="counter3">0</span><span>+</span>
+              </div>
+              <p class="text-cyber-textSecondary text-sm">Internship Experience</p>
             </div>
           </GlassCard>
 
           <GlassCard>
             <div class="text-center">
-              <div class="text-4xl font-bold gradient-text mb-2">100%</div>
-              <p class="text-cyber-textSecondary text-sm">Dedication</p>
+              <div class="text-4xl font-bold gradient-text mb-2">
+                <span ref="counter4">0</span><span>+</span>
+              </div>
+              <p class="text-cyber-textSecondary text-sm">Students Mentored</p>
             </div>
           </GlassCard>
         </div>
@@ -72,5 +80,62 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 import GlassCard from '@/components/common/GlassCard.vue';
+
+const counter1 = ref(null);
+const counter2 = ref(null);
+const counter3 = ref(null);
+const counter4 = ref(null);
+
+const animateCounter = (element, target, duration = 2000) => {
+  if (!element) return;
+  
+  const start = 0;
+  const startTime = Date.now();
+  
+  const updateCounter = () => {
+    const elapsed = Date.now() - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const current = Math.floor(progress * (target - start) + start);
+    
+    element.textContent = current;
+    
+    if (progress < 1) {
+      requestAnimationFrame(updateCounter);
+    } else {
+      element.textContent = target;
+    }
+  };
+  
+  updateCounter();
+};
+
+const animateAllCounters = () => {
+  // Stagger the animations slightly for better visual effect
+  setTimeout(() => animateCounter(counter1.value, 5, 2000), 0);
+  setTimeout(() => animateCounter(counter2.value, 3, 2000), 100);
+  setTimeout(() => animateCounter(counter3.value, 2, 2000), 200);
+  setTimeout(() => animateCounter(counter4.value, 100, 2000), 300);
+};
+
+onMounted(() => {
+  // Use Intersection Observer to trigger animation when section becomes visible
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateAllCounters();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  const section = document.getElementById('about');
+  if (section) {
+    observer.observe(section);
+  }
+});
 </script>

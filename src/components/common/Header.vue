@@ -4,10 +4,7 @@
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center gap-2 group">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-cyber-primary to-cyber-secondary flex items-center justify-center">
-            <span class="text-cyber-bg font-bold">AA</span>
-          </div>
-          <span class="text-xl font-bold gradient-text">Anugrah Alian</span>
+          <span class="text-xl font-bold gradient-text">Anugrah Alian Putratama</span>
         </RouterLink>
 
         <!-- Desktop Menu -->

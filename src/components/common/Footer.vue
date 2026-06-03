@@ -26,10 +26,10 @@
         <div>
           <h4 class="text-cyber-text font-semibold mb-4">Resources</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth">Blog</a></li>
-            <li><a href="#" class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth">Documentation</a></li>
-            <li><a href="#" class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth">Tools</a></li>
-            <li><a href="#" class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth">API</a></li>
+            <li><a href="#projects" class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth">All Projects</a></li>
+            <li><a href="#experience" class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth">Experience</a></li>
+            <li><a href="#certifications" class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth">Certifications</a></li>
+            <li><a href="/resume.pdf" class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth">Download CV</a></li>
           </ul>
         </div>
 
@@ -67,10 +67,7 @@
       <!-- Bottom Footer -->
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-cyber-textSecondary text-sm mb-4 md:mb-0">
-          &copy;Copyright 2026 Anugrah Alian. All rights reserved.
-        </p>
-        <p class="text-cyber-textSecondary text-sm">
-          Designed with <span class="text-cyber-primary"></span> using Vue 3 & Tailwind CSS
+          &copy;Copyright 2026 Anugrah Alian Putratama. All rights reserved.
         </p>
       </div>
     </div>
