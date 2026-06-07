@@ -30,6 +30,7 @@
     "axios": "^1.16.1",
     "clsx": "^2.1.1",
     "cypress": "^15.14.0",
+    "esbuild": "^0.28.0",
     "eslint": "^10.2.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-cypress": "^6.3.1",
