@@ -208,12 +208,20 @@ export const portfolioData = {
   ],
   experience: [
     {
+      id: 6,
       title: 'Informatics Intern',
-      company: 'PT PLN (Persero) Unit Induk Pembangunan Kalimantan Bagian Timur',
-      date: 'Present - Aug 2026',
+      company: 'PT PLN (Persero) Unit Induk Distribusi Kalimantan Timur dan Utara',
+      date: 'Jul - Aug 2026',
       description:
-        'Participating in web application development and digital transformation initiatives.',
-      highlights: ['To be updated upon internship completion'],
+        'Developed two internal web applications for PLN UID Kaltimra to support compliance management and fleet operations, working across the full stack from database design to frontend implementation.',
+      highlights: [
+        'Built the Compliance Excellent Program (CEP) system from scratch, Laravel backend with role-based middleware, migrations, and API controllers, plus a Vue.js frontend for compliance evidence submission and review',
+        'Developed a two-path evidence submission and approval workflow supporting multi-level organizational roles (Induk, Unit, ULP)',
+        'Designed and built Car Monitor, a vehicle booking and tracking system with automatic scheduling conflict detection realtime status updates',
+        'Implemented Row Level Security (RLS) policies and serverless functions for secure, role-scoped access control',
+        'Fixed critical bugs across authentication, file handling, and reactive data loading; restructured user roles and permissions',
+        'Delivered dashboard analytics and notification systems using Chart.js and in-app alerts',
+      ],
     },
     {
       id: 5,

@@ -75,7 +75,7 @@
             </li>
             <li>
               <a
-                href="https://drive.google.com/file/d/1MIAEWGoODF5jcMKetdZFzdf4lP5w_YXE/view?usp=sharing"
+                href="https://drive.google.com/file/d/16Kn6LBaNH3Mkg3KTCFDo48Y0zv1liZYe/view?usp=drive_link"
                 target="_blank"
                 rel="noopener"
                 class="text-cyber-textSecondary hover:text-cyber-primary transition-smooth"
