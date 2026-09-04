@@ -13,7 +13,7 @@ export const portfolioData = {
     email: 'alianputratama@gmail.com',
     phone: '+1 (555) 123-4567',
     location: 'Balikpapan, Indonesia',
-    bio: 'Passionate about network engineering and cybersecurity. Dedicated to building secure, robust infrastructure for the digital world.',
+    bio: 'Passionate about building things from full-stack web applications to secure network infrastructure. With a background in Computer and Network Engineering, I enjoy bridging development and networking to create reliable, secure digital solutions.',
   },
   social: {
     github: 'https://github.com/Alian13',
