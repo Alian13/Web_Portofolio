@@ -72,35 +72,36 @@ export const portfolioData = {
       id: 7, // sesuaikan urutan, taruh paling atas karena project terbaru
       title: 'Car Monitor',
       description:
-        'A vehicle monitoring and scheduling web application built for PLN operational fleet management. Enables staff to book vehicle usage schedules, track which vehicles are currently in use, and monitor fuel consumption reports to identify efficient versus wasteful vehicle usage.',
+        "A vehicle monitoring and booking system for PLN UID Kaltimra's operational fleet. Users can book and track vehicle usage with scheduling conflicts prevented at the database level, live status updates, and admin-only driver account management handled through Vercel Serverless Functions.",
       image: CarMonitor, // ganti fallback ini setelah asset screenshot tersedia
-      technologies: ['Vue.js'], // tambahkan sisanya sendiri
+      technologies: ['Vue.js', 'Vite', 'Pinia', 'Vue Router', 'Tailwind CSS', 'PostgreSQL'], // tambahkan sisanya sendiri
       requirements: [
-        'Vehicle usage booking and scheduling system',
-        'Real-time monitoring of vehicles currently in use',
-        'Fuel consumption reporting and tracking',
-        'Fleet efficiency analysis (fuel-efficient vs fuel-wasteful usage)',
-        'Role-based access for staff and fleet administrators',
-        'Booking history and usage logs',
-        'Responsive and mobile-friendly interface',
+        'Vehicle booking and scheduling with automatic conflict detection',
+        'Role-based access for SPV, Manager, and Driver',
+        'Real-time booking status updates via Supabase Realtime',
+        'Row Level Security (RLS) policies for secure, role-scoped data access',
+        'In-app notification bell and toast alerts',
+        'Driver account management restricted to SPV role, via serverless functions',
+        'Automated booking status synchronization via scheduled cron job',
+        'Responsive, mobile-friendly interface',
       ],
     },
     {
       id: 6,
       title: 'Compliance Management Office',
       description:
-        'A web-based compliance evidence management system developed for ULP (Unit Layanan Pelanggan) and subordinate units under UID (Unit Induk Distribusi) at PT PLN. Replaces the previous manual, Google Drive-based process with a centralized platform for uploading, monitoring, and tracking mandatory compliance evidence in real time, improving visibility and accountability across units.',
+        'A compliance management system built for PLN UID Kaltimra to support ISO 37001:2025 certification, replacing a manual, Google Drive-based evidence tracking process. The system manages a multi-level organizational structure (Induk, Unit, ULP), routes compliance evidence through role-based approval flows, and tracks compliance clauses, audit findings, and reference manuals per reporting period.',
       image: ComplianceManagement, // ganti fallback ini setelah asset screenshot tersedia
-      technologies: ['Vue.js', 'Laravel'], // tambahkan sisanya sendiri // ganti dengan demo/github jika ada link publik
+      technologies: ['Vue.js', 'Laravel 11', 'MySQL', 'Sanctum', 'Tailwind CSS', 'Chart.js'], // tambahkan sisanya sendiri // ganti dengan demo/github jika ada link publik
       requirements: [
-        'Centralized compliance evidence upload and storage',
-        'Real-time tracking and monitoring of mandatory evidence submissions',
-        'Role-based access for ULP and subordinate units under UID',
-        'Submission status dashboard and reporting',
-        'Deadline and compliance reminder notifications',
-        'Document categorization and search',
-        'Audit trail for evidence submission history',
-        'Responsive and user-friendly interface',
+        'Multi-level organizational structure management (Induk / Unit / ULP)',
+        'Role-based access control',
+        'Two-path evidence submission and approval workflow',
+        'Compliance clause and sub-clause management scoped per reporting period',
+        'Audit findings tracking with PDF document upload',
+        'Reference manual document repository',
+        'In-app notifications and ZIP export for compliance reports',
+        'Dashboard analytics with Chart.js visualizations',
       ],
     },
     {
